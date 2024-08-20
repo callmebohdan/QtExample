@@ -38,3 +38,9 @@
 # Build directories
 out/
 build/
+
+# Git attributes file
+.gitattributes
+
+# Qt configuration files
+.qt
