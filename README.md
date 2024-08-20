@@ -25,7 +25,7 @@ Windows:
 4. Add the Qt6 install location to  PATH:
 
     ```powershell
-    bash$env:PATH = "C:\Qt\6.7.2\mingw_64\bin;$env:PATH"
+    $env:PATH = "C:\Qt\6.7.2\mingw_64\bin;$env:PATH"
     ```
 
 5. Install [Cmake](https://cmake.org/download).
