@@ -19,4 +19,4 @@ qt_add_executable(QtExample ${SOURCE_FILES} ${HEADER_FILES} ${UI_FILES} ${ASSET_
 
 target_link_libraries(QtExample PRIVATE Qt6::Widgets)
 
-set_target_properties(QtExample PROPERTIES WIN64_EXECUTABLE ON)
+set_target_properties(QtExample PROPERTIES WIN64_EXECUTABLE ON LINK_FLAGS "-mwindows")
