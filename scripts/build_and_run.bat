@@ -15,6 +15,7 @@ popd
 
 set BUILD_DIR=%PROJECT_DIR%\build
 set OUT_DIR=%PROJECT_DIR%\out
+set BIN_DIR=%PROJECT_DIR%\bin
 set QT_PATH=C:\Qt\6.7.2\mingw_64
 
 :: Clean previous build if exists
@@ -27,6 +28,11 @@ if exist "%BUILD_DIR%" (
 if exist "%OUT_DIR%" (
     echo Cleaning previous build's output...
     rd /s /q "%OUT_DIR%"
+)
+
+if exist "%BIN_DIR%" (
+    echo Cleaning previous build bin/...
+    rd /s /q "%BIN_DIR%"
 )
 
 :: Create build directory and navigate into it
@@ -45,13 +51,26 @@ mingw32-make
 :: Deploy Qt libraries if using Qt
 if exist "%QT_PATH%\bin\windeployqt.exe" (
     echo Deploying Qt libraries...
-    "%QT_PATH%\bin\windeployqt.exe" "QtExample.exe"
+    "%QT_PATH%\bin\windeployqt.exe" "%BUILD_DIR%\QtExample.exe"
+)
+
+:: Copying the executable and necessary libraries into the bin directory
+if exist "%BUILD_DIR%\QtExample.exe" (
+    echo Copying the application into the bin/ directory...
+    mkdir "%BIN_DIR%\platforms"
+    copy "%BUILD_DIR%\QtExample.exe" "%BIN_DIR%"
+    copy "%BUILD_DIR%\Qt6Core.dll" "%BIN_DIR%"
+    copy "%BUILD_DIR%\Qt6Gui.dll" "%BIN_DIR%"
+    copy "%BUILD_DIR%\Qt6Widgets.dll" "%BIN_DIR%"
+    copy "%BUILD_DIR%\platforms" "%BIN_DIR%\platforms"
+) else (
+    echo Error: minipass.exe was not created.
 )
 
 :: Run the executable if it was created
 if exist "%BUILD_DIR%\QtExample.exe" (
     echo Running the application...
-    ".\QtExample.exe"
+    "%BIN_DIR%\QtExample.exe"
 ) else (
     echo Error: QtExample.exe was not created.
 )
