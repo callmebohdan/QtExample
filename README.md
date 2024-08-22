@@ -52,15 +52,20 @@ Windows:
     .\scripts\build_and_run.bat
     ```
 
+4. Clean the project:
+
+    ```powershell
+    .\scripts\clean.bat
+    ```
+
 ## Example
 
 Run the application:
 
 ```powershell
-.\build\QtExample.exe
+.\bin\QtExample.exe
 ```
 
 You should see this window:
 
 ![QtExample](assets/QtExample.png)
-
