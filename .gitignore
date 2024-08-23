@@ -38,6 +38,7 @@
 # Build directories
 out/
 build/
+bin/
 
 # Git attributes file
 .gitattributes
