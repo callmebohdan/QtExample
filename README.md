@@ -129,4 +129,4 @@ Linux:
 
 You should see this window:
 
-![QtExample](assets/QtExample.png)
+![QtExample](assets/example/QtExample.png)
