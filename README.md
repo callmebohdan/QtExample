@@ -5,7 +5,7 @@ A simple example of a Qt6 project, built with Cmake.
 ## Requirements
 
  - Cmake v3.30.2
- - MinGW-w64 v4.4.1
+ - MSVC2019_64 (Windows)
  - Qt6 v6.7.2 (Windows)
  - Qt6 v6.2.4 (Linux)
 
@@ -13,27 +13,26 @@ A simple example of a Qt6 project, built with Cmake.
 
 Windows:
 
-1. Install [MinGW-w64 via MSYS2](https://code.visualstudio.com/docs/cpp/config-mingw).
+1. [Install Cmake](https://cmake.org/download).
 
-2. Add the MinGW install location to PATH:
+2. [Install Qt6 via Qt Online Installer](https://doc.qt.io/qt-6/qt-online-installation.html).
+Also install MSVC2019_64 (Qt Maintenance Tool -> Add or remove components -> Qt -> Qt 6.7.2 -> MSVC 2019 64-bit).
 
-    ```powershell
-    $env:PATH = "C:\msys64\ucrt64\bin;$env:PATH"
-    ```
-
-3. Install [Qt6](https://doc.qt.io/qt-6/qt-online-installation.html):
-
-4. Add the Qt6 install location to  PATH:
+3. Add the Qt6 install location to PATH:
 
     ```powershell
-    $env:PATH = "C:\Qt\6.7.2\mingw_64\bin;$env:PATH"
+    $env:PATH = "C:\Qt\6.7.2\msvc2019_64\bin;$env:PATH"
     ```
-
-5. Install [Cmake](https://cmake.org/download).
 
 Linux:
 
-1. Install gcc:
+1. Install Cmake:
+
+    ```bash
+    sudo apt-get -y install cmake
+    ```
+  
+2. Install gcc:
 
     ```bash
     sudo apt-get -y install build-essential
@@ -42,13 +41,13 @@ Linux:
 3. Install Qt6:
 
     ```bash
-    sudo apt-get -y install libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev qt6-base-dev qt6-base-dev-tools libxcb-cursor0
+    sudo apt-get -y install libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev qt6-base-dev qt6-base-dev-tools libxcb-cursor0 qt6-multimedia-dev
     ```
 
-5. Install Cmake:
+4. Install missing dependencies for XKB and Vulkan:
 
     ```bash
-    $ sudo apt-get -y install cmake
+    sudo apt-get -y install libxkbcommon-dev libvulkan-dev libqt6svg6*
     ```
 
 ## Usage
@@ -70,7 +69,7 @@ Windows:
 3. Build and run the project:
 
     ```powershell
-    .\scripts\build_and_run.bat
+    .\scripts\build.bat
     ```
 
 4. Clean the project:
@@ -96,7 +95,7 @@ Linux:
 3. Build and run the project:
 
     ```bash
-    sh ./scripts/build_and_run.sh
+    sh ./scripts/build.sh
     ```
 
 4. Clean the project:
@@ -108,7 +107,7 @@ Linux:
 5. To fix the **Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway** run:
 
     ```bash
-    export QT_QPA_PLATFORM=xcb
+    export QT_QPA_PLATFORM=xcb ; source ~/.bashrc
     ```
 
 ## Example
