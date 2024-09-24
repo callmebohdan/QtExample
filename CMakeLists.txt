@@ -10,7 +10,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(ASSET_FILES assets/QtExample.rc)
+set(ASSET_FILES assets/icon/QtExample.rc)
 set(HEADER_FILES src/mainwindow.h)
 set(SOURCE_FILES src/main.cpp src/mainwindow.cpp)
 set(UI_FILES src/mainwindow.ui)
