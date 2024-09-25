@@ -1,13 +1,10 @@
 #include <qapplication.h>
-#include "mainwindow.h"
+#include "QtExample.h"
 
 int main(int argc, char* argv[])
 {
 	QApplication application(argc, argv);
-
-	MainWindow mainWindow;
-
-	mainWindow.show();
-
+	QtExample qtExample;
+	qtExample.show();
 	return application.exec();
 }
