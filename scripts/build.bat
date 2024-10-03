@@ -53,16 +53,7 @@ if exist "%QT_PATH%\bin\windeployqt.exe" (
 if exist "%BUILD_DIR%\Release\QtExample.exe" (
     echo Copying the application into the bin/ directory...
     mkdir "%BIN_DIR%"
-    xcopy /s /e /y "%BUILD_DIR%\Release\QtExample.exe" "%BIN_DIR%"
-    xcopy /s /e /y "%BUILD_DIR%\Release\*.dll" "%BIN_DIR%"
-    xcopy /s /e /y "%BUILD_DIR%\Release\generic" "%BIN_DIR%\generic"
-    xcopy /s /e /y "%BUILD_DIR%\Release\iconengines" "%BIN_DIR%\iconengines"
-    xcopy /s /e /y "%BUILD_DIR%\Release\imageformats" "%BIN_DIR%\imageformats"
-    xcopy /s /e /y "%BUILD_DIR%\Release\multimedia" "%BIN_DIR%\multimedia"
-    xcopy /s /e /y "%BUILD_DIR%\Release\networkinformation" "%BIN_DIR%\networkinformation"
-    xcopy /s /e /y "%BUILD_DIR%\Release\platforms" "%BIN_DIR%\platforms"
-    xcopy /s /e /y "%BUILD_DIR%\Release\styles" "%BIN_DIR%\styles"
-    xcopy /s /e /y "%BUILD_DIR%\Release\tls" "%BIN_DIR%\tls"
+    xcopy /s /e /y /I "%BUILD_DIR%\Release" "%BIN_DIR%"
 ) else (
     echo Error: QtExample.exe was not created.
 )
