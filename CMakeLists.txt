@@ -21,10 +21,12 @@ set(HEADER_FILES src/QtExample.h)
 set(SOURCE_FILES src/main.cpp src/QtExample.cpp)
 set(UI_FILES src/QtExample.ui)
 
-add_executable(QtExample ${SOURCE_FILES} ${HEADER_FILES} ${UI_FILES} ${ASSET_FILES})
-
-target_link_libraries(QtExample PRIVATE Qt6::Widgets Qt6::Core Qt6::Gui)
+qt6_wrap_ui(UI_HEADERS ${UI_FILES})
 
 if (WIN32)
-    set_target_properties(QtExample PROPERTIES WIN64_EXECUTABLE ON LINK_FLAGS "-mwindows")
+    qt_add_executable(QtExample WIN32 ${SOURCE_FILES} ${HEADER_FILES} ${UI_HEADERS} ${ASSET_FILES})
+else()
+    qt_add_executable(QtExample ${SOURCE_FILES} ${HEADER_FILES} ${UI_HEADERS} ${ASSET_FILES})
 endif()
+
+target_link_libraries(QtExample PRIVATE Qt6::Widgets Qt6::Core Qt6::Gui)
