@@ -15,6 +15,7 @@ PROJECT_DIR=$(pwd)
 
 BUILD_DIR="$PROJECT_DIR/build"
 BIN_DIR="$PROJECT_DIR/bin"
+SRC_DIR="$PROJECT_DIR/src"
 QT_PATH="/usr/lib/x86_64-linux-gnu/cmake/Qt6"
 QT_LIB_PATH="/usr/lib/x86_64-linux-gnu"
 
@@ -37,6 +38,10 @@ cd "$BUILD_DIR"
 # Configure the project with CMake
 echo "Running CMake configuration..."
 cmake -G "Unix Makefiles" -DCMAKE_PREFIX_PATH="$QT_PATH" "$PROJECT_DIR"
+
+# Generate the ui_QtExample.h
+echo "Generate UI_QtExample.h"
+uic "$SRC_DIR/QtExample.ui" -o "$SRC_DIR/ui_QtExample.h"
 
 # Build the project
 echo "Building the project..."
