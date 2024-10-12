@@ -41,7 +41,7 @@ Linux:
 3. Install Qt6:
 
     ```bash
-    sudo apt-get -y install libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev qt6-base-dev qt6-base-dev-tools libxcb-cursor0 qt6-multimedia-dev
+    sudo apt-get -y install libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev qt6-base-dev qt6-tools-dev libxcb-cursor0 qt6-multimedia-dev
     ```
 
 4. Install missing dependencies for XKB and Vulkan:
