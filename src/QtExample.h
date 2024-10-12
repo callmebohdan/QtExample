@@ -17,9 +17,6 @@ public:
 	explicit QtExample(QWidget* parent = nullptr);
 	~QtExample();
 
-private slots:
-	void actionExit();
-
 private:
 	Ui::QtExample* ui;
 };

@@ -54,17 +54,6 @@
     </layout>
    </widget>
   </widget>
-  <action name="actionExit">
-   <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::ApplicationExit"/>
-   </property>
-   <property name="text">
-    <string>Exit</string>
-   </property>
-   <property name="menuRole">
-    <enum>QAction::MenuRole::QuitRole</enum>
-   </property>
-  </action>
  </widget>
  <resources/>
  <connections/>
