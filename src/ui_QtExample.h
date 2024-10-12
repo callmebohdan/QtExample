@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'QtExample.ui'
 **
-** Created by: Qt User Interface Compiler version 6.7.2
+** Created by: Qt User Interface Compiler version 5.15.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,7 +10,6 @@
 #define UI_QTEXAMPLE_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -22,7 +21,6 @@ QT_BEGIN_NAMESPACE
 class Ui_QtExample
 {
 public:
-    QAction *actionExit;
     QWidget *centralWidget;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
@@ -31,7 +29,7 @@ public:
     void setupUi(QMainWindow *QtExample)
     {
         if (QtExample->objectName().isEmpty())
-            QtExample->setObjectName("QtExample");
+            QtExample->setObjectName(QString::fromUtf8("QtExample"));
         QtExample->setEnabled(true);
         QtExample->resize(649, 101);
         QtExample->setWindowTitle(QString::fromUtf8("QtExample"));
@@ -39,21 +37,16 @@ public:
         QtExample->setAnimated(true);
         QtExample->setDocumentMode(false);
         QtExample->setUnifiedTitleAndToolBarOnMac(false);
-        actionExit = new QAction(QtExample);
-        actionExit->setObjectName("actionExit");
-        QIcon icon(QIcon::fromTheme(QIcon::ThemeIcon::ApplicationExit));
-        actionExit->setIcon(icon);
-        actionExit->setMenuRole(QAction::MenuRole::QuitRole);
         centralWidget = new QWidget(QtExample);
-        centralWidget->setObjectName("centralWidget");
+        centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         verticalLayoutWidget = new QWidget(centralWidget);
-        verticalLayoutWidget->setObjectName("verticalLayoutWidget");
+        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(10, 10, 629, 81));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         textLabel = new QLabel(verticalLayoutWidget);
-        textLabel->setObjectName("textLabel");
+        textLabel->setObjectName(QString::fromUtf8("textLabel"));
         QFont font;
         font.setPointSize(30);
         textLabel->setFont(font);
@@ -69,7 +62,6 @@ public:
 
     void retranslateUi(QMainWindow *QtExample)
     {
-        actionExit->setText(QCoreApplication::translate("QtExample", "Exit", nullptr));
         textLabel->setText(QCoreApplication::translate("QtExample", "Welcome to the QtExample project!", nullptr));
         (void)QtExample;
     } // retranslateUi
