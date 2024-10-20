@@ -36,7 +36,7 @@ cd "%BUILD_DIR%"
 
 if exist "%QT_PATH%\bin\uic.exe" (
     echo Generating QtExample.h from QtExample.ui...
-    "%QT_PATH%\bin\uic.exe" -o "%SRC_DIR%\UI_QtExample.h" "%SRC_DIR%\QtExample.ui"
+    "%QT_PATH%\bin\uic.exe" -o "%SRC_DIR%\ui_qtexample.h" "%SRC_DIR%\QtExample.ui"
 )
 
 echo Configuring the project with CMake...
