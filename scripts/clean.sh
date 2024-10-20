@@ -1,26 +1,30 @@
 #!/bin/bash
 
-set -e
-
+SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+cd "$SCRIPT_DIR/.."
 PROJECT_DIR=$(pwd)
 
-BUILD_DIR="$PROJECT_DIR/build"
 BIN_DIR="$PROJECT_DIR/bin"
+BUILD_DIR="$PROJECT_DIR/build"
+OUT_DIR="$PROJECT_DIR/out"
 SRC_DIR="$PROJECT_DIR/src"
 
-# Clean previous build if exists
-if [ -d "$BUILD_DIR" ]; then
-    echo "Cleaning previous build..."
-    rm -rf "$BUILD_DIR"
-fi
-
-# Clean previous build bin directory if exists
 if [ -d "$BIN_DIR" ]; then
-    echo "Cleaning previous build bin/..."
+    echo "Cleaning bin/ directory..."
     rm -rf "$BIN_DIR"
 fi
 
+if [ -d "$BUILD_DIR" ]; then
+    echo "Cleaning build/ directory..."
+    rm -rf "$BUILD_DIR"
+fi
+
+if [ -d "$OUT_DIR" ]; then
+    echo "Cleaning out/ directory..."
+    rm -rf "$OUT_DIR"
+fi
+
 if [ -d "SRC_DIR/ui_qtexample.h" ]; then
-    echo "Cleaning previous build ui_qtexample.h..."
+    echo "Deleting ui_qtexample.h..."
     rm -f "$BIN_DIR/ui_qtexample.h"
 fi
