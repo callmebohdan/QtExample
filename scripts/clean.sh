@@ -24,7 +24,7 @@ if [ -d "$OUT_DIR" ]; then
     rm -rf "$OUT_DIR"
 fi
 
-if [ -d "SRC_DIR/ui_qtexample.h" ]; then
+if [ -d "$SRC_DIR/ui_qtexample.h" ]; then
     echo "Deleting ui_qtexample.h..."
     rm -f "$BIN_DIR/ui_qtexample.h"
 fi
