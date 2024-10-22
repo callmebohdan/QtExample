@@ -6,15 +6,15 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
 if (MSVC)
     add_compile_options(/Zc:__cplusplus)
 endif()
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets Core Gui)
-
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
-set(CMAKE_AUTOUIC ON)
 
 set(ASSET_FILES assets/icon/QtExample.rc)
 set(HEADER_FILES src/QtExample.h)
