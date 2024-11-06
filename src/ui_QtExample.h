@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'QtExample.ui'
 **
-** Created by: Qt User Interface Compiler version 5.15.3
+** Created by: Qt User Interface Compiler version 6.7.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -29,7 +29,7 @@ public:
     void setupUi(QMainWindow *QtExample)
     {
         if (QtExample->objectName().isEmpty())
-            QtExample->setObjectName(QString::fromUtf8("QtExample"));
+            QtExample->setObjectName("QtExample");
         QtExample->setEnabled(true);
         QtExample->resize(649, 101);
         QtExample->setWindowTitle(QString::fromUtf8("QtExample"));
@@ -38,15 +38,15 @@ public:
         QtExample->setDocumentMode(false);
         QtExample->setUnifiedTitleAndToolBarOnMac(false);
         centralWidget = new QWidget(QtExample);
-        centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        centralWidget->setObjectName("centralWidget");
         verticalLayoutWidget = new QWidget(centralWidget);
-        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
+        verticalLayoutWidget->setObjectName("verticalLayoutWidget");
         verticalLayoutWidget->setGeometry(QRect(10, 10, 629, 81));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         textLabel = new QLabel(verticalLayoutWidget);
-        textLabel->setObjectName(QString::fromUtf8("textLabel"));
+        textLabel->setObjectName("textLabel");
         QFont font;
         font.setPointSize(30);
         textLabel->setFont(font);
