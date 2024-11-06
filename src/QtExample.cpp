@@ -1,8 +1,8 @@
-#include <qaction.h>
+#include <new>
 #include <qmainwindow.h>
 #include <qwidget.h>
 #include "QtExample.h"
-#include "ui_QtExample.h"
+#include "ui_qtexample.h"
 
 QtExample::QtExample(QWidget* parent)
 	: QMainWindow(parent)
